@@ -1,0 +1,27 @@
+﻿@using OlympiadUI.ViewModels
+@model RestoreByPhone
+
+@{
+    ViewBag.Title = "Восстановление пароля";
+    Layout = "~/Views/Shared/UnauthorizedLayout.cshtml";
+}
+@using (Html.BeginForm("RemindPasswordByPhone", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <div class="form-group">
+        <label>Телефон</label>
+        @Html.EditorFor(x => x.Phone, new { @htmlAttributes = new { @class = "form-control", @id = "phone" } })
+    </div>
+    <span id="sendPhone" class="btn btn-premier">Отправить</span>
+    <div class="d-none text-danger" id="phoneError">
+        Номер телефона в системе не найден
+    </div>
+    <div id="codeSubmit" class="form-group d-none">
+        <label>Код подтверждения</label>
+        @Html.EditorFor(x => x.Code, new { @htmlAttributes = new { @class = "form-control" } })
+        <input class="btn btn-premier" type="submit" value="Восстановить" />
+    </div>
+    <div id="codeError" class="text-danger d-none">
+
+    </div>
+}

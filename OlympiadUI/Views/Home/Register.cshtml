@@ -1,0 +1,69 @@
+﻿@using OlympiadUI.ViewModels
+@model RegisterParticipant
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/UnauthorizedLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-group form_input">
+        <label for="forLogin">Логин</label>
+        @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Введите логин" } })
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+    <div class="form-group">
+        <label for="password">Пароль</label>
+        @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Введите пароль", @type = "password" } })
+        @Html.ValidationMessageFor(x => x.Password)
+    </div>
+    <div class="form-group">
+        <label for="password">Повторите пароль</label>
+        @Html.EditorFor(x => x.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Повторите пароль", @type = "password" } })
+        @Html.ValidationMessageFor(x => x.ConfirmPassword)
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        @Html.EditorFor(x => x.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+    <div class="form-group">
+        <label for="phone">Телефон</label>
+        @Html.EditorFor(x => x.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Телефон" } })
+        @Html.ValidationMessageFor(x => x.Phone)
+    </div>
+    <div class="form-group">
+        <label for="name">Имя</label>
+        @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Имя" } })
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <div class="form-group">
+        <label for="surname">Фамилия</label>
+        @Html.EditorFor(x => x.Surname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Фамилия" } })
+        @Html.ValidationMessageFor(model => model.Surname)
+    </div>
+    <div class="form-group">
+        <label for="lastname">Отчество</label>
+        @Html.EditorFor(x => x.Lastname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Отчество" } })
+        @Html.ValidationMessageFor(x => x.Lastname)
+    </div>
+    <div class="form-group">
+        <label for="org">Образовательное учреждение</label>
+        @Html.EditorFor(x => x.EducationalInstitution, new { htmlAttributes = new { @class = "form-control", @placeholder = "Образовательная организация" } })
+        @Html.ValidationMessageFor(x => x.EducationalInstitution)
+    </div>
+    <div class="form-group">
+        <label for="birthdate">Дата рождения</label>
+        @Html.EditorFor(x => x.Birthdate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Дата рождения", @type = "date" } })
+        @Html.ValidationMessageFor(x => x.Birthdate)
+    </div>
+    <div class="form-group">
+        <label for="sex">Пол</label>
+        @Html.EnumDropDownListFor(x => x.Sex, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Sex)
+    </div>
+    <input class="d-flex mx-auto btn btn-premier" value="Зарегистрироваться" id="RegisterButton" type="submit">
+}
+<a href="/Home/Login" class="btn d-flex btn-premier mx-auto">Войти</a>

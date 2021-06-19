@@ -1,0 +1,11 @@
+﻿@using Olympiads.WEB.Models
+@model IEnumerable<SubjectVM>
+@foreach (var subject in Model)
+{
+    <div data-id=@subject.Id class="subject-filter filter badge badge-info m-1 d-flex align-items-center">
+        <img width="35" height="35" src="@Url.Content(subject.IconPath)" />
+        <span class="d-inline-flex" data-id=@subject.Id>@subject.Name</span>
+    </div>
+}
+
+

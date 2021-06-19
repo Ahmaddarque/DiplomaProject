@@ -1,0 +1,9 @@
+﻿@using Olympiads.WEB.Helpers
+<div class="row align-items-center">
+    <div class="col">
+        <a href="@Url.Action("Index","Home")">
+            <img class="img-fluid logo" src="@Url.Content("~/Content/Img/logo.png")">
+        </a>
+    </div>
+    @{Html.RenderAction("RenderHeading", "Common");}
+</div>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/core/style")
+    @Scripts.Render("~/bundles/core/script")
+    @Scripts.Render("~/bundles/validation")
+    <link href="~/Content/layout-unauth.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col">
+                    <a href="#" class="logo">
+                        <img src="@Url.Content("~/Content/Img/logo.png")" class="d-block mx-auto img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container content">
+            <div class="col">
+                <h1 class="content-title text-center">@ViewBag.Title</h1>
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+</body>
+@RenderSection("Scripts",false)
+</html>

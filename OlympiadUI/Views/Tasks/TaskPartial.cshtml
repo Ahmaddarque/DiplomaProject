@@ -1,0 +1,17 @@
+﻿@using OlympiadUI.ViewModels
+@model TaskInfo
+
+<div>
+    <span>Вопрос </span>
+    <span>@Model.Number</span>
+    <span> из </span>
+    <span>@Model.Total</span>
+</div>
+<span>@Model.Content</span>
+@if (Model.ImagePath != null)
+{
+    <img src="@Url.Content(Model.ImagePath)" alt="Alternate Text" />
+}
+
+@{Html.RenderAction("GetTestTaskDetails", "Tasks", new { @TestId = Model.TestId, @Number = Model.Number });}
+

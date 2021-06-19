@@ -1,0 +1,7 @@
+﻿@using OlympiadUI.Models
+@model IEnumerable<Test>
+
+@foreach (var test in Model)
+{
+    @Html.Partial("TestPartial",test);
+}

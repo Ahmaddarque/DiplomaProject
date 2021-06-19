@@ -1,0 +1,41 @@
+﻿@using Olympiads.WEB.Helpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/core/style")
+    @Scripts.Render("~/bundles/core/script")
+    @Scripts.Render("~/Scripts/menu.js")
+    @Styles.Render("~/Content/layout-auth.css")
+
+    @RenderSection("Styles",false)
+</head>
+<body>
+    <header>
+        <div class="container">
+            @Html.Partial("HeadingPartial");
+            @Html.Partial("MainMenuPartial");
+        </div>
+        @RenderSection("Header", false)
+    </header>
+    <section>
+        <div class="container">
+            <h1 class="display-4 text-center">@ViewBag.Title</h1>
+            <div class="row">
+                @if (!(ViewBag.Title == "Главная"))
+                {
+                    Html.RenderPartial("SecondaryMenuPartial");
+                }
+                    
+                <div class="col">
+                    <main>
+                        @RenderBody() 
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+    @RenderSection("scripts",false)
+</body>
+</html>

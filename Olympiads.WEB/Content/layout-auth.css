@@ -1,0 +1,104 @@
+
+header 
+{
+    min-height: 285px;
+    background: url('Img/back-2.jpg') no-repeat top center / cover;
+}
+
+.logo 
+{
+    max-width: 100%;
+}
+
+@media(max-width : 800px) {
+    .logo 
+    {
+    max-width: 180px;
+    }
+}
+
+.menu 
+{
+    background-image: linear-gradient(180deg,#88a455,#60833c);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.menu > li 
+{
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 30px;
+}
+
+.menu > li.current, .menu > li:hover 
+{
+    color: rgb(255, 209, 25);
+}
+
+.menu_item_icon 
+{
+    color: rgb(255, 209, 25);
+    font-size: 2em;
+    margin-right: 15px;
+}
+
+.menu_home 
+{
+    font-size: 2.5em;
+}
+
+.menu_home:hover 
+{
+    color: rgb(255, 209, 25);
+}
+
+.profile-info-icon 
+{
+    background: linear-gradient(180deg,#88a455,#60833c);
+    /*linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-info-icon 
+{
+    display: initial;
+}
+
+.profile-info 
+{
+    color: rgb(255, 209, 25);
+}
+
+.title 
+{
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+text-align: center;
+}
+
+.nav-link > i {
+margin-right: 20px;
+}
+
+.secondary-menu {
+font-weight: bold;
+}
+
+.secondary-menu-item {
+padding: 10px 10px;
+background: linear-gradient(180deg,#88a455,#60833c);
+margin-bottom: 10px;
+}
+.secondary-menu-item.active, .secondary-menu-item:hover 
+{
+background: rgb(255, 209, 25);
+}

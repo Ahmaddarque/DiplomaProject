@@ -1,0 +1,36 @@
+﻿@using Olympiads.WEB.Models
+@using Olympiads.BLL.DTO
+@model TaskInfoViewModel
+@{
+    ViewBag.Title = "Тест";
+    Layout = "~/Views/Shared/TasksLayout.cshtml";
+}
+<div>
+    <span>Вопрос </span>
+    <span>@Model.Number</span>
+    <span> из </span>
+    <span>@Model.Total</span>
+</div>
+<span>@Model.Content</span>
+<input type="hidden" id="IsLast" value=@Model.IsLast>
+@if (Model.ImagePath != null)
+{
+    <img src="@Url.Content(Model.ImagePath)" alt="task_img" />
+}
+
+@using (Ajax.BeginForm("Submit", "Tests", new AjaxOptions() { HttpMethod = "POST" }, new { @id = "task-form" }))
+{
+    <input id="UserAnswer" type="hidden" name="userAnswer" />
+    <input id="TaskNumber" type="hidden" name="TaskNumber" value=@Model.Number />
+
+    if (Model.Number > 1)
+    {
+        <input id="btnPreviousTask" class="btn btn-premier" value="Предыдущий вопрос" />
+    }
+    <input id="btnNextTask" type="submit" class="btn btn-premier" value="Следующий вопрос" />
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Tests/test.js");
+}

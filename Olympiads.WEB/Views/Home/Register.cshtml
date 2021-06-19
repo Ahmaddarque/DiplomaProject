@@ -1,0 +1,81 @@
+﻿@using Olympiads.WEB.Models
+@model RegisterParticipantViewModel
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/UnauthorizedLayout.cshtml";
+}
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @id = "registerForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-group form_input">
+        <label for="forLogin">Логин</label>
+        @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Введите логин" } })
+        @Html.ValidationMessageFor(x => x.Login, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="password">Пароль</label>
+        @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Введите пароль", @type = "password" } })
+        @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="password">Повторите пароль</label>
+        @Html.EditorFor(x => x.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Повторите пароль", @type = "password" } })
+        @Html.ValidationMessageFor(x => x.ConfirmPassword, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        @Html.EditorFor(x => x.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+        @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="phone">Телефон</label>
+        @Html.EditorFor(x => x.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Телефон" } })
+        @Html.ValidationMessageFor(x => x.Phone, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="name">Имя</label>
+        @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Имя" } })
+        @Html.ValidationMessageFor(x => x.Name, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="surname">Фамилия</label>
+        @Html.EditorFor(x => x.Surname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Фамилия" } })
+        @Html.ValidationMessageFor(model => model.Surname, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="lastname">Отчество</label>
+        @Html.EditorFor(x => x.Lastname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Отчество" } })
+        @Html.ValidationMessageFor(x => x.Lastname, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="org">Образовательное учреждение</label>
+        @Html.EditorFor(x => x.EducationalInstitution, new { htmlAttributes = new { @class = "form-control", @placeholder = "Образовательная организация" } })
+        @Html.ValidationMessageFor(x => x.EducationalInstitution, null, new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="birthdate">Дата рождения</label>
+        @Html.EditorFor(x => x.Birthdate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Дата рождения", @type = "date" } })
+        @Html.ValidationMessageFor(x => x.Birthdate, null, new { @class = "text-danger" })
+    </div>
+    <div class="d-flex">
+        <div class="form-check">
+            <label>Мужской</label>
+            @Html.RadioButtonFor(x => x.Gender,true)
+            <label>Женский</label>
+            @Html.RadioButtonFor(x => x.Gender, false)
+        </div>
+    </div>
+
+
+    <input class="d-flex m-1 btn btn-premier" value="Зарегистрироваться" id="RegisterButton" type="submit">
+    <div class="d-flex justify-content-center">
+        <a href="@Url.Action("Login")" class="btn m-1 d-flex btn-premier">Войти</a>
+    </div>
+}
+
+
+@section Scripts{
+    <script src="~/Scripts/Home/register.js"></script>
+}

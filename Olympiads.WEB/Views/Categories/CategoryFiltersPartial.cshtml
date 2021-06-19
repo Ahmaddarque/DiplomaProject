@@ -1,0 +1,11 @@
+﻿@using Olympiads.WEB.Models
+@model IEnumerable<CategoryVM>
+
+    @foreach (var category in Model)
+    {
+        <div data-id=@category.Id class="category-filter filter badge badge-success m-2 d-flex align-items-center">
+            <img class="d-inline-flex" src="@Url.Content(category.IconPath)" height="35" width="35" alt="Alternate Text" />
+            <span class="d-inline-flex">@category.Name</span>
+        </div>
+    }
+

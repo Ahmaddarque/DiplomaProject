@@ -1,0 +1,7 @@
+﻿@using OlympiadUI.Models
+@model Subject
+    
+<div class="subject-badge badge badge-info m-1 d-flex align-items-center">
+    <img width="35" height="35" src="@Url.Content(Model.IconPath)" />
+    <span class="d-inline-flex" data-id=@Model.Id>@Model.Name</span>
+</div>

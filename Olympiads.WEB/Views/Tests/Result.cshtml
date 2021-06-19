@@ -1,0 +1,19 @@
+﻿@using Olympiads.WEB.Models
+@model ActivityResultVM
+@{
+    ViewBag.Title = "Результаты";
+    Layout = "~/Views/Shared/TasksLayout.cshtml";
+}
+
+
+@Html.HiddenFor(x => x.Right,new { @id="rightCount"})
+@Html.HiddenFor(y => y.Total,new { @id = "totalCount"})
+
+<canvas id="taskStatsChart">
+    
+</canvas>
+@section Scripts{
+    @Scripts.Render("~/Scripts/Chart/Chart.js")
+    @Scripts.Render("~/Scripts/Tests/results.js")
+}
+

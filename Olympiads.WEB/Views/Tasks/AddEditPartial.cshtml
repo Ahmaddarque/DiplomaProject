@@ -1,0 +1,48 @@
+﻿@model Olympiads.WEB.Models.EditTask
+
+<div class="card">
+    <div class="card-header">
+        @if (Model.IsEdit)
+        {
+            <h5>Изменить</h5>
+        }
+        else
+        {
+            <h5>Добавить</h5>
+        }
+        <div class="card-header-right"><i class="icofont icofont-spinner-alt-5"></i></div>
+
+        <div class="card-header-right">
+            <i class="icofont icofont-spinner-alt-5"></i>
+        </div>
+    </div>
+    <div class="card-block">
+        @using (Html.BeginForm("Save", "Testing", FormMethod.Post, new { @id = "editForm" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(x => x.Number,new { @id="number"})
+            <div class="form-group">
+                <label for="name">Название</label>
+                @Html.EditorFor(x => x.Content, new { htmlAttributes = new { @class = "form-control error", @placeholder = "Имя", @id = "content" } })
+                @Html.ValidationMessageFor(x => x.Content, null, new { @class = "text-danger error" })
+            </div>
+            <div class="form-group">
+                <label for="ImagePath">Изображение</label>
+                @Html.EditorFor(x => x.ImagePath, new { htmlAttributes = new { @class = "form-control error", @placeholder = "Имя", @id = "imagepath",@type="file"} })
+                @Html.ValidationMessageFor(x => x.ImagePath, null, new { @class = "text-danger error" })
+            </div>
+            <div class="d-flex justify-content-center">
+                @if (Model.IsEdit)
+                {
+                    <input type="submit" class="m-1 btn btn-round btn-success" id="editButton" value="Сохранить">
+                }
+                else
+                {
+                    <input type="submit" class="m-1 btn btn-round btn-success" id="buttonAdd" value="Сохранить">
+                }
+                <span class="m-1 btn btn-round btn-danger " id="cancelEditButton">Отмена</span>
+            </div>
+        }
+    </div>
+</div>
+

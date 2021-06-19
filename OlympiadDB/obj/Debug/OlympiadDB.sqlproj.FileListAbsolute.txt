@@ -1,0 +1,10 @@
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\bin\Debug\OlympiadDB.dacpac
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\bin\Debug\OlympiadDB.dll
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\bin\Debug\OlympiadDB.pdb
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\OlympiadDB.sqlprojAssemblyReference.cache
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\Model.xml
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\refactor.xml
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\postdeploy.sql
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\predeploy.sql
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\OlympiadDB.dll
+C:\Users\ahmad\Desktop\Diploma\program\Olympiads\OlympiadDB\obj\Debug\OlympiadDB.pdb

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Тестовые задания";
+    Layout = "~/Views/Shared/TasksLayout.cshtml";
+}
+<div class="d-flex-column mb-4">
+    <div class="d-flex align-items-center">
+        <input type="text" id="tests-search" class="form-control mr-2" />
+        <i id="load-tests" class="fa-2x text-center fa fa-search d-inline-flex btn btn-premier"></i>
+    </div>
+    <div class="d-flex align-items-center">
+        <span class="d-inline-flex">Предмет</span>
+        @{Html.RenderAction("RenderSubjectFilters", "Subjects");}
+        <div class="m-1 d-flex align-items-center">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="filter-subject-all" />
+                <span class="d-inline-flex">Все</span>
+            </div>
+        </div>
+    </div>
+    <div class="d-md-flex align-items-center">
+        <span class="d-inline-flex">Категория</span>
+        @{Html.RenderAction("RenderCategoryFilters", "Categories");}
+        <div class="m-1 d-flex align-items-center">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="filter-category-all" />
+                <span class="d-inline-flex">Все</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex-column tests">
+    <div>Loading...</div>
+</div>
+<div class="d-flex justify-content-center">
+    <span id="loadMoreTests" class="btn btn-premier">Показать ещё</span>
+</div>
+
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Tests/tests.js")
+}

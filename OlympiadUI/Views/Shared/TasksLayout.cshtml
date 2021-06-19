@@ -1,0 +1,34 @@
+﻿@using OlympiadUI.Helpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/core/style")
+    @Scripts.Render("~/bundles/core/script")
+    @Styles.Render("~/Content/layout-auth.css")
+    @Styles.Render("~/Content/layout-tasks.css")
+
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <header>
+        <div class="container">
+            @Html.Partial("HeadingPartial")
+            @Html.Partial("MainMenuPartial");
+        </div>
+        @RenderSection("Header", false)
+    </header>
+    <section>
+        <div class="container">
+            <h1 class="display-5">@ViewBag.Title</h1>
+        </div>
+        <div>
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+    @RenderSection("scripts", false)
+</body>
+</html>

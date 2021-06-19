@@ -1,0 +1,12 @@
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\obj\Debug\Olympiads.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\Olympiads.DAL.dll.config
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\Olympiads.DAL.dll
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\Olympiads.DAL.pdb
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\EntityFramework.dll
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\EntityFramework.xml
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\obj\Debug\Olympiads.DAL.csproj.CopyComplete
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\obj\Debug\Olympiads.DAL.dll
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\obj\Debug\Olympiads.DAL.pdb
+C:\Users\ahmad\Desktop\Olympiads\Olympiads.DAL\obj\Debug\Olympiads.DAL.csprojAssemblyReference.cache

@@ -1,0 +1,7 @@
+﻿@using OlympiadUI.Models
+@model IEnumerable<Subject>
+
+@foreach (var subject in Model)
+{
+    @Html.Partial("SubjectBadgePartial",subject)
+}

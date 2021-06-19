@@ -1,0 +1,7 @@
+﻿@using OlympiadUI.Models
+@model IEnumerable<ParticipantCategory>
+
+    @foreach (var category in Model)
+    {
+        @Html.Partial("CategoryFilterPartial",category)
+    }

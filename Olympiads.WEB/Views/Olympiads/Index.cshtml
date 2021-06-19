@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Admin/AdminAutorizedLayout.cshtml";
+    ViewBag.Title = "Олимпиады";
+}
+
+<div class="page-header card">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="icofont icofont-book-alt bg-c-green"></i>
+                <div class="d-inline">
+                    <h4>Олимпиады</h4>  
+                    <span>Просмотр,добавление,изменение олимпиад</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="pcoded-search">
+        <span class="searchbar-toggle"></span>
+        <div class="pcoded-search-box">
+            <input id="search" type="text" placeholder="Поиск по ID или Названию">
+            <span id="searchOlympiads" class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
+        </div>
+        <div class="form-check">
+            <label for="active" class="form-check-label">Активные</label>
+            <input id="active" name="IsActive" type="radio" checked>
+            <label for="unactive" class="form-check-label">Неактивные</label>
+            <input id="unactive" name="IsActive" type="radio">
+        </div>
+    </div>
+</div>
+<span id="addButton" class="m-1 mx-auto btn btn-round btn-warning">
+    Добавить
+</span>
+<div class="row">
+    <div id="olympiads" class="col-md-12">
+
+    </div>
+    <div id="addEditOlympiads" class="d-none">
+
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Admin/olympiads.js")
+}
+
+            
+

@@ -1,0 +1,36 @@
+﻿@model int
+@{
+    Layout = "~/Views/Admin/AdminAutorizedLayout.cshtml";
+    ViewBag.Title = "Задания";
+}
+
+<div class="page-header card">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="icofont icofont icofont icofont-tasks-alt bg-c-green"></i>
+                <div class="d-inline">
+                    <h4>Задания</h4>
+                    <span>Просмотр,добавление,изменение и удаление заданий</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@Model" id="activity-id"/>
+<span id="addButton" class="m-1 mx-auto btn btn-round btn-warning">Добавить</span>
+<div class="row">
+    <div id="tasks" class="col-md-12">
+
+    </div>
+    <div id="addEditTasks" class="d-none">
+
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Admin/tasks.js")
+}
+
+

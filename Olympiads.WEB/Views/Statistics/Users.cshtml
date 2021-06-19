@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Статистика по пользователям";
+    Layout = "~/Views/Admin/AdminAutorizedLayout.cshtml";
+}
+
+<div class="page-header card">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="icofont icofont icofont icofont-chart-pie-alt bg-c-orenge"></i>
+                <div class="d-inline">
+                    <h4>Статистика по пользователям</h4>
+                    <span>Просмотр статистики по пользователям</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-header">
+        <h5>Недельная статистика</h5>
+    </div>
+    <div class="card-block">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-12">
+                <h5 class="text-center">Пользователи</h5>
+                <div id="visiterWeekStats" class="chart"></div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5 class="text-center">Участники</h5>
+                <div id="participantWeekStats" class="chart"></div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5 class="text-center">Пользователь/Участник</h5>
+                <div id="participantVisiterWeekRatio" class="chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Месячная статистика</h5>
+    </div>
+    <div class="card-block">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <label>Период</label>
+                <input class="form-control" id="monthPeriod" type="number" value="1" />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-12">
+                <h5 class="text-center">Пользователи</h5>
+                <div id="visiterMonthStats" class="chart"></div>
+            </div>
+            <div class="col-sm-12">
+                <h5 class="text-center">Участники</h5>
+                <div id="participantMonthStats" class="chart"></div>
+            </div>
+            <div class="col-sm-12">
+                <h5 class="text-center">Пользователь/Участник</h5>
+                <div id="participantVisiterMonthRatio" class="chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Statistics/users-statistics.js");
+    @Scripts.Render("~/bundles/AmCharts")
+}
+@section Styles
+{
+    @Styles.Render("~/Content/Statistics/stats.css");
+
+}
+

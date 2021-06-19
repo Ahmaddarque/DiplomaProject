@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Admin/AdminAutorizedLayout.cshtml";
+    ViewBag.Title = "Участники";
+}
+
+<div class="page-header card">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="icofont icofont icofont icofont-user-alt-7 bg-c-pink"></i>
+                <div class="d-inline">
+                    <h4>Участники</h4>  
+                    <span>Поиск,блокирование,регистрация участников</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="pcoded-search">
+        <span class="searchbar-toggle"></span>
+        <div class="pcoded-search-box">
+            <input id="search" type="text" placeholder="Поиск по ID или Фамилии">
+            <span id="searchParticipants" class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
+        </div>
+    </div>
+</div>
+<span id="addButton" class="m-1 mx-auto btn btn-round btn-warning">
+    Добавить
+</span>
+<div class="row">
+    <div id="participants" class="col-md-12">
+
+    </div>
+    
+    <div id="addEditParticipants" class="d-none">
+
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Admin/participants.js")
+}
+
+            
+

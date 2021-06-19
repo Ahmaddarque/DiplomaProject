@@ -1,0 +1,56 @@
+﻿@model Olympiads.WEB.Models.Admin.EditTestViewModel
+<div class="card">
+    <div class="card-header">
+        @if (Model.IsEdit)
+        {
+            <h5>Изменить</h5>
+        }
+        else
+        {
+            <h5>Добавить</h5>
+        }
+        <div class="card-header-right"><i class="icofont icofont-spinner-alt-5"></i></div>
+
+        <div class="card-header-right">
+            <i class="icofont icofont-spinner-alt-5"></i>
+        </div>
+    </div>
+    <div class="card-block">
+        @using (Html.BeginForm("Save","Testing",FormMethod.Post, new { @id = "editForm" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(x => x.Id)
+            <div class="form-group">
+                <label for="name">Название</label>
+                @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control error", @placeholder = "Имя", @id = "name" } })
+                @Html.ValidationMessageFor(x => x.Name, null, new { @class = "text-danger error" })
+            </div>
+            <div class="form-group">
+                <label for="description">Описание</label>
+                @Html.EditorFor(x => x.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "Описание", @id = "description" } })
+                @Html.ValidationMessageFor(model => model.Description, null, new { @class = "text-danger error" })
+            </div>
+            <div class="form-group">
+                <label for="subjects">Предмет</label>
+                @Html.DropDownListFor(model => model.Subject,Model.AvailableSubjects, null, new { @class = "form-control",@id="subject" })
+                @Html.ValidationMessageFor(model => model.Subject,null, new { @class = "text-danger error" })
+            </div>
+            <div class="form-group">
+                <label for="category">Категория участника</label>
+                @Html.DropDownListFor(x => x.Category, Model.AvailableCategories,null,new { @class="form-control",@id="category"})
+                @Html.ValidationMessageFor(x => x.Category, null, new { @class = "text-danger error" })
+            </div>
+            <div class="d-flex justify-content-center">
+                @if (Model.IsEdit)
+                {
+                    <input type="submit" class="m-1 btn btn-round btn-success" id="editButton" value="Сохранить">
+                }
+                else
+                {
+                    <input type="submit" class="m-1 btn btn-round btn-success" id="addParticipantButton" value="Сохранить">
+                }
+                <span class="m-1 btn btn-round btn-danger " id="cancelEditButton">Отмена</span>
+            </div>
+        }
+    </div>
+</div>

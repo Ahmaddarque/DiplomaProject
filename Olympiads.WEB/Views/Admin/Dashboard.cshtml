@@ -1,0 +1,101 @@
+﻿@model Olympiads.WEB.Models.Admin.DashboardViewModel
+@{
+    Layout = "~/Views/Admin/AdminAutorizedLayout.cshtml";
+    ViewBag.Title = "Информация";
+}
+
+<div class="row">
+    <!-- card1 start -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card widget-card-1">
+            <div class="card-block-small">
+                <i class="icofont icofont-users-alt-1 bg-c-blue card1-icon"></i>
+                <span class="text-c-blue f-w-600">Посетителей</span>
+                <h4>@Model.VisitersLastDay</h4>
+                <div>
+                    <span class="f-left m-t-10 text-muted">
+                        <i class="text-c-blue f-16 icofont icofont-calendar m-r-10"></i>Последние 24 часа
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card1 end -->
+    <!-- card1 start -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card widget-card-1">
+            <div class="card-block-small">
+                <i class="icofont icofont-user-alt-7 bg-c-pink card1-icon"></i>
+                <span class="text-c-pink f-w-600">Участники</span>
+                <h4>@Model.ParticipantsLastDay</h4>
+                <div>
+                    <span class="f-left m-t-10 text-muted">
+                        <i class="text-c-pink f-16 icofont icofont-calendar m-r-10"></i>Последние 24 часа
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card1 end -->
+    <!-- card1 start -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card widget-card-1">
+            <div class="card-block-small">
+                <i class="icofont icofont-law-document bg-c-green card1-icon"></i>
+                <span class="text-c-green f-w-600">Олимпиад</span>
+                <h4>@Model.OlympiadsLastDay</h4>
+                <div>
+                    <span class="f-left m-t-10 text-muted">
+                        <i class="text-c-green f-16 icofont icofont-calendar m-r-10"></i>Последние 24 часа
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card1 end -->
+    <!-- card1 start -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card widget-card-1">
+            <div class="card-block-small">
+                <i class="icofont icofont-tasks-alt bg-c-yellow card1-icon"></i>
+                <span class="text-c-yellow f-w-600">Тестирования</span>
+                <h4>@Model.TestsLastDay</h4>
+                <div>
+                    <span class="f-left m-t-10 text-muted">
+                        <i class="text-c-yellow f-16 icofont icofont-calendar m-r-10"></i>Последние 24 часа
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card1 end -->
+    <!-- Посещения сайта за последний месяц -->
+    <div class="col-md-12 col-xl-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Посетители за последний месяц</h5>
+                <div class="card-header-left">
+                </div>
+                <div class="card-header-right">
+                    <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left "></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-block">
+                <div id="statestics-chart" style="height:517px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Admin/dashboard.js");
+}
+
+

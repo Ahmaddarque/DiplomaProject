@@ -1,0 +1,23 @@
+﻿@using Olympiads.WEB.Models
+@model IEnumerable<TestVM>
+
+@foreach (var test in Model)
+{
+    <li class="d-flex bg-secondary align-items-center test">
+        <i class="fa-1x ml-3 text-warning fa-circle fa d-inline-flex"></i>
+        <div class="col">
+            <h4>@test.Name</h4>
+            @if (test.Description != null)
+            {
+                <span class="d-inline-flex align-items-center">@test.Description</span>
+            }
+            <div class="d-flex subject-badges">
+                @Html.Partial("~/Views/Subjects/SubjectBadgePartial.cshtml",test.Subject)
+            </div>
+        </div>
+        <a href="@Url.Action("StartTest","Tests",new { @TestId = test.Id})" class="btn btn-premier d-flex mr-5">
+            <span class="d-none d-md-inline ">Пройти тест</span>
+            <i class="fa fa-2x fa-play d-md-none"></i>
+        </a>
+</li>
+}

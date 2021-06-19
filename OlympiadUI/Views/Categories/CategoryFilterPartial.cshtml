@@ -1,0 +1,7 @@
+﻿@using OlympiadUI.Models
+@model ParticipantCategory
+
+<div data-id=@Model.Id class="category-filter filter badge badge-success m-2 d-flex align-items-center">
+    <img class="d-inline-flex" src="@Url.Content(Model.IconPath)" height="35" width="35" alt="Alternate Text" />
+    <span class="d-inline-flex">@Model.Name</span>
+</div>

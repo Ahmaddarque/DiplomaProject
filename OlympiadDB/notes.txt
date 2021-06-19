@@ -1,0 +1,29 @@
+1)Верификация участника
+2)Как учесть что у участника может сменится категория
+3)Пароль:асимметричный ключ или алгоритм хеширования\шифрования
+
+
+2 Типа мероприятий 
+1)Олимпиада
+2)Тестирование
+
+3)Два типа участников:
+1)Зарегистрированный,может получать доступ к олимпиадам
+но не может их проходить без верификации
+
+2)Посетитель,может выполнять только тестовые задания
+
+3)
+
+Statistics
+1)TestsPassed {interval}
+2)OlympiadsHeld {interval}
+3)PopularSubjects {interval}
+4)TestsPassedToOlympiadsHeld
+5)NewUsers Per {interval}
+6)NewParticipants Per {interval}
+7)Participants-To-Visitor Ratio
+
+Imports
+
+

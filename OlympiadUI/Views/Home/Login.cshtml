@@ -1,0 +1,31 @@
+﻿@using OlympiadUI.ViewModels
+@model AuthParticipant
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/UnauthorizedLayout.cshtml";
+}
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="login">Логин</label>
+        @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Логин" } })
+    </div>
+    <div class="form-group">
+        <label for="password">Пароль</label>
+        @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Логин", @type = "password" } })
+        @if (ViewBag.Error != null)
+        {
+            <div class="field-validation-error">@ViewBag.Error</div>
+        }
+    </div>
+
+    <input value="Войти" type="submit" class="d-flex mx-auto btn btn-premier">
+    <div class="d-flex">
+        <a class="mx-auto text-danger"  href="@Url.Action("Restore")">Забыли пароль?</a>
+    </div>
+    
+}
+
+
+

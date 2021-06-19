@@ -1,0 +1,19 @@
+﻿@using OlympiadUI.ViewModels
+@model TaskInfo
+@{
+    ViewBag.Title = Model.TestName;
+    Layout = "~/Views/Shared/TasksLayout.cshtml";
+}
+@{Html.RenderAction("GetTestTask", "Tasks", new { @TestId = Model.TestId, @Number = Model.Number });}
+@using (Html.BeginForm("Submit", "Tests", FormMethod.Post, new { @id = "task-form" }))
+{
+    <input type="hidden" id="userAnswer" name="userAnswer" />
+    <input type="hidden" id="testId" name="testId" value=@Model.TestId />
+    <input type="hidden" name="taskNumber" value=@Model.Number />
+    <input type="submit" class="btn btn-premier" value="Следующий вопрос" />
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/test.js"></script>
+}

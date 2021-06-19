@@ -1,0 +1,58 @@
+﻿@model Olympiads.WEB.Models.Admin.SecurityCredentials
+@{
+    ViewBag.Title = "Безопасность";
+    Layout = "~/Views/Admin/AdminAutorizedLayout.cshtml";
+}
+
+<div class="page-header card">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="icofont icofont-shield-alt bg-inverse"></i>
+                <div class="d-inline">
+                    <h4>Безопасность</h4>
+                    <span>Смена логина и/или пароля</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Безопасность</h5>
+    </div>
+    <div class="card-block">
+        @using (Html.BeginForm("Security", "Admin", FormMethod.Post))
+        {
+            <div id="success" class="text-success">
+                @ViewBag.Success
+            </div>
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label for="name">Новый логин</label>
+                @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "form-control error", @placeholder = "Новый логин", @id = "name" } })
+                @Html.ValidationMessageFor(x => x.Login, null, new { @class = "text-danger error" })
+            </div>
+            <div class="form-group">
+                <label for="name">Новый пароль</label>
+                @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-control error", @placeholder = "Новый пароль", @id = "password",@type="password"} })
+                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger error" })
+            </div>
+             <div class="form-group">
+                <label for="name">Повтор пароля</label>
+                @Html.EditorFor(x => x.ConfirmPassword, new { htmlAttributes = new { @class = "form-control error", @placeholder = "Имя", @id = "confirmpassword", @type = "password" } })
+                @Html.ValidationMessageFor(x => x.ConfirmPassword, null, new { @class = "text-danger error" })
+            </div>
+            <div class="d-flex justify-content-center">
+                <input type="submit" class="m-1 btn btn-round btn-success" value="Сохранить">
+                <a href=@Url.Action("Dashboard","Admin")>
+                    <span class="m-1 btn btn-round btn-danger">
+                        Отмена
+                    </span>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
